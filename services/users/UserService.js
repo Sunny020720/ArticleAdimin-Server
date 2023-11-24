@@ -7,6 +7,16 @@ const UserService = {
             username,
             password
         })
+    },
+    register:async({username,password})=>{
+        const result = await UserModel.find({
+            username
+        })
+        // 用户名未被占用 创建用户
+        if(result.length===0){
+            await UserModel.create({username, password})
+        }
+        return result
     }
 }
 
