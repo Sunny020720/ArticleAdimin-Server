@@ -17,6 +17,31 @@ const UserService = {
             await UserModel.create({username, password})
         }
         return result
+    },
+    userinfo:async({_id})=>{
+        return UserModel.find({
+            _id
+        })
+    },
+    update:async({nickname,email, _id})=>{
+        return UserModel.updateOne({
+            _id
+        },{
+            nickname,email
+        })
+    },
+    // 校验原密码是否正确
+    CheckOldPsw:async({_id,old_pwd})=>{
+        let password=old_pwd
+        return UserModel.find({_id,password})
+    },
+    updatepwd:async({ new_pwd,_id})=>{
+        let password=new_pwd
+        return UserModel.updateOne({
+            _id
+        },{
+            password
+        })
     }
 }
 
