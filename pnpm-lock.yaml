@@ -32,6 +32,9 @@ dependencies:
   morgan:
     specifier: ~1.9.1
     version: registry.npmmirror.com/morgan@1.9.1
+  multer:
+    specifier: 1.4.5-lts.1
+    version: registry.npmmirror.com/multer@1.4.5-lts.1
   mysql:
     specifier: ^2.18.1
     version: registry.npmmirror.com/mysql@2.18.1
@@ -115,6 +118,12 @@ packages:
     engines: {node: '>=0.4.2'}
     dev: false
 
+  registry.npmmirror.com/append-field@1.0.0:
+    resolution: {integrity: sha512-klpgFSWLW1ZEs8svjfb7g4qWY0YS5imI82dTg+QahUvJ8YqAY0P10Uk8tTyh9ZGuYEZEMaeJYCF5BFuX552hsw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/append-field/-/append-field-1.0.0.tgz}
+    name: append-field
+    version: 1.0.0
+    dev: false
+
   registry.npmmirror.com/array-flatten@1.1.1:
     resolution: {integrity: sha512-PCVAQswWemu6UdxsDFFX/+gVeYqKAod3D3UVm91jHwynguOwAvYPhx8nNlM++NqRcK6CxxpUafjmhIdKiHibqg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/array-flatten/-/array-flatten-1.1.1.tgz}
     name: array-flatten
@@ -190,6 +199,21 @@ packages:
     version: 1.0.1
     dev: false
 
+  registry.npmmirror.com/buffer-from@1.1.2:
+    resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/buffer-from/-/buffer-from-1.1.2.tgz}
+    name: buffer-from
+    version: 1.1.2
+    dev: false
+
+  registry.npmmirror.com/busboy@1.6.0:
+    resolution: {integrity: sha512-8SFQbg/0hQ9xy3UNTB0YEnsNBbWfhf7RtnzpL7TkBiTBRfrQ9Fxcnz7VJsleJpyp6rVLvXiuORqjlHi5q+PYuA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/busboy/-/busboy-1.6.0.tgz}
+    name: busboy
+    version: 1.6.0
+    engines: {node: '>=10.16.0'}
+    dependencies:
+      streamsearch: registry.npmmirror.com/streamsearch@1.1.0
+    dev: false
+
   registry.npmmirror.com/bytes@3.0.0:
     resolution: {integrity: sha512-pMhOfFDPiv9t5jjIXkHosWmkSyQbvsgEVNkz0ERHbuLh2T/7j4Mqqpz523Fe8MVY89KC6Sh/QfS2sM+SjgFDcw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/bytes/-/bytes-3.0.0.tgz}
     name: bytes
@@ -255,6 +279,18 @@ packages:
     engines: {node: '>= 0.6.x'}
     dependencies:
       graceful-readlink: registry.npmmirror.com/graceful-readlink@1.0.1
+    dev: false
+
+  registry.npmmirror.com/concat-stream@1.6.2:
+    resolution: {integrity: sha512-27HBghJxjiZtIk3Ycvn/4kbJk/1uZuJFfuPEns6LaEvpvG1f0hTea8lilrouyo9mVc2GWdcEZ8OLoGmSADlrCw==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/concat-stream/-/concat-stream-1.6.2.tgz}
+    name: concat-stream
+    version: 1.6.2
+    engines: {'0': node >= 0.8}
+    dependencies:
+      buffer-from: registry.npmmirror.com/buffer-from@1.1.2
+      inherits: registry.npmmirror.com/inherits@2.0.4
+      readable-stream: registry.npmmirror.com/readable-stream@2.3.8
+      typedarray: registry.npmmirror.com/typedarray@0.0.6
     dev: false
 
   registry.npmmirror.com/constantinople@3.0.2:
@@ -911,6 +947,21 @@ packages:
     version: 2.1.2
     dev: false
 
+  registry.npmmirror.com/multer@1.4.5-lts.1:
+    resolution: {integrity: sha512-ywPWvcDMeH+z9gQq5qYHCCy+ethsk4goepZ45GLD63fOu0YcNecQxi64nDs3qluZB+murG3/D4dJ7+dGctcCQQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/multer/-/multer-1.4.5-lts.1.tgz}
+    name: multer
+    version: 1.4.5-lts.1
+    engines: {node: '>= 6.0.0'}
+    dependencies:
+      append-field: registry.npmmirror.com/append-field@1.0.0
+      busboy: registry.npmmirror.com/busboy@1.6.0
+      concat-stream: registry.npmmirror.com/concat-stream@1.6.2
+      mkdirp: registry.npmmirror.com/mkdirp@0.5.6
+      object-assign: registry.npmmirror.com/object-assign@4.1.1
+      type-is: registry.npmmirror.com/type-is@1.6.18
+      xtend: registry.npmmirror.com/xtend@4.0.2
+    dev: false
+
   registry.npmmirror.com/mysql@2.18.1:
     resolution: {integrity: sha512-Bca+gk2YWmqp2Uf6k5NFEurwY/0td0cpebAucFpY/3jhrwrVGuxU2uQFCHjU19SJfje0yQvi+rVWdq78hR5lig==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/mysql/-/mysql-2.18.1.tgz}
     name: mysql
@@ -1255,6 +1306,13 @@ packages:
     engines: {node: '>= 0.6'}
     dev: false
 
+  registry.npmmirror.com/streamsearch@1.1.0:
+    resolution: {integrity: sha512-Mcc5wHehp9aXz1ax6bZUyY5afg9u2rv5cqQI3mRrYkGC8rW2hM02jWuwjtL++LS5qinSyhj2QfLyNsuc+VsExg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/streamsearch/-/streamsearch-1.1.0.tgz}
+    name: streamsearch
+    version: 1.1.0
+    engines: {node: '>=10.0.0'}
+    dev: false
+
   registry.npmmirror.com/string_decoder@1.1.1:
     resolution: {integrity: sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/string_decoder/-/string_decoder-1.1.1.tgz}
     name: string_decoder
@@ -1282,6 +1340,12 @@ packages:
     dependencies:
       media-typer: registry.npmmirror.com/media-typer@0.3.0
       mime-types: registry.npmmirror.com/mime-types@2.1.35
+    dev: false
+
+  registry.npmmirror.com/typedarray@0.0.6:
+    resolution: {integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/typedarray/-/typedarray-0.0.6.tgz}
+    name: typedarray
+    version: 0.0.6
     dev: false
 
   registry.npmmirror.com/uglify-js@2.2.5:
@@ -1384,6 +1448,13 @@ packages:
     name: wordwrap
     version: 0.0.3
     engines: {node: '>=0.4.0'}
+    dev: false
+
+  registry.npmmirror.com/xtend@4.0.2:
+    resolution: {integrity: sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/xtend/-/xtend-4.0.2.tgz}
+    name: xtend
+    version: 4.0.2
+    engines: {node: '>=0.4'}
     dev: false
 
   registry.npmmirror.com/yallist@4.0.0:
