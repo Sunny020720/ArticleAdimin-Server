@@ -30,17 +30,23 @@ const UserService = {
             nickname,email
         })
     },
+    update_avatar:async({avatar, _id})=>{
+        return UserModel.updateOne({
+            _id
+        },{
+            user_pic:avatar
+        })
+    },
     // 校验原密码是否正确
     CheckOldPsw:async({_id,old_pwd})=>{
         let password=old_pwd
         return UserModel.find({_id,password})
     },
-    updatepwd:async({ new_pwd,_id})=>{
-        let password=new_pwd
+    update_pwd:async({ new_pwd,_id})=>{
         return UserModel.updateOne({
             _id
         },{
-            password
+            password:new_pwd
         })
     }
 }
