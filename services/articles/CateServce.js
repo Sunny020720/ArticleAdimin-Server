@@ -15,6 +15,9 @@ const CateService = {
             cate_name,cate_alias
         })
     },
+    del:async({_id})=>{
+        return CateModel.deleteOne({_id})
+    }
 }
 
 module.exports = CateService

@@ -1,4 +1,4 @@
-const {list,add,info} = require("../../services/articles/CateServce");
+const {list,add,info,del} = require("../../services/articles/CateServce");
 
 const CateController={
     //1.获取频道列表
@@ -56,13 +56,24 @@ const CateController={
             })
         }
     },
-    // //4.删除分类
-    // export const artDelChannelService = (id) => {
-    //     return request.delete('/my/cate/del', {
-    //         params: { id }
-    //     })
-    // }
+    //4.删除分类
+    del:async(req,res)=>{
+        // req.body
+        var result = await del(req.query)
 
+        if(result.length === 0){
+            res.send({
+                code: -1,
+                message:"删除失败"
+            })
+        }else{
+            res.send({
+                code: 0,
+                message:'删除成功！',
+                ActionType:"OK",
+            })
+        }
+    },
 }
 
 module.exports = CateController
