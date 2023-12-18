@@ -17,6 +17,7 @@ var indexRouter = require('./routes/index');
 
 var UserRouter = require('./routes/users/UserRouter');
 const {verify, generate} = require("./util/JWT");
+const CateRouter = require("./routes/articles/CateRouter");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,6 +57,7 @@ app.use((req,res,next)=>{
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use(UserRouter)
+app.use(CateRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
