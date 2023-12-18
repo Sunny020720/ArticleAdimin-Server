@@ -1,10 +1,7 @@
-const {list} = require("../../services/articles/CateServce");
+const {list,add} = require("../../services/articles/CateServce");
 
 const CateController={
-    // //1.获取频道列表
-    // export const artGetChannelsService = () => {
-    //     return request.get('/my/cate/list')
-    // }
+    //1.获取频道列表
     list:async(req,res)=>{
         // req.body
         var result = await list(req.body)
@@ -23,10 +20,24 @@ const CateController={
             })
         }
     },
-    // //2.添加分类
-    // export const artAddChannelService = (data) => {
-    //     return request.post('/my/cate/add', data)
-    // }
+    //2.添加分类
+    add:async(req,res)=>{
+        // req.body
+        var result = await add(req.body)
+
+        if(result.length === 0){
+            res.send({
+                code: -1,
+                message:"添加失败"
+            })
+        }else{
+            res.send({
+                code: 0,
+                message:'添加成功！',
+                ActionType:"OK",
+            })
+        }
+    },
     // //3.编辑分类
     // export const artEditChannelService = (data) => {
     //     return request.put('/my/cate/info', data)
