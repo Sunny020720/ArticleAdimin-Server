@@ -8,6 +8,13 @@ const CateService = {
     add:async({cate_name,cate_alias})=>{
         return CateModel.create({cate_name, cate_alias})
     },
+    info:async({cate_name,cate_alias,_id})=>{
+        return CateModel.updateOne({
+            _id
+        },{
+            cate_name,cate_alias
+        })
+    },
 }
 
 module.exports = CateService

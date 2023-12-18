@@ -1,4 +1,4 @@
-const {list,add} = require("../../services/articles/CateServce");
+const {list,add,info} = require("../../services/articles/CateServce");
 
 const CateController={
     //1.获取频道列表
@@ -38,10 +38,24 @@ const CateController={
             })
         }
     },
-    // //3.编辑分类
-    // export const artEditChannelService = (data) => {
-    //     return request.put('/my/cate/info', data)
-    // }
+    //3.编辑分类
+    info:async(req,res)=>{
+        // req.body
+        var result = await info(req.body)
+
+        if(result.length === 0){
+            res.send({
+                code: -1,
+                message:"编辑失败"
+            })
+        }else{
+            res.send({
+                code: 0,
+                message:'编辑成功！',
+                ActionType:"OK",
+            })
+        }
+    },
     // //4.删除分类
     // export const artDelChannelService = (id) => {
     //     return request.delete('/my/cate/del', {
