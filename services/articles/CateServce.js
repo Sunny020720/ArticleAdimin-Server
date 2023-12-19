@@ -17,6 +17,9 @@ const CateService = {
     },
     del:async({_id})=>{
         return CateModel.deleteOne({_id})
+    },
+    find_name:async({cate_id:_id})=>{
+        return CateModel.find({_id});
     }
 }
 
