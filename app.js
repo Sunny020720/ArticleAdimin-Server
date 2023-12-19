@@ -18,6 +18,7 @@ var indexRouter = require('./routes/index');
 var UserRouter = require('./routes/users/UserRouter');
 const {verify, generate} = require("./util/JWT");
 const CateRouter = require("./routes/articles/CateRouter");
+const ArticleRouter = require("./routes/articles/ArticleRouter");
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -44,7 +45,7 @@ app.use((req,res,next)=>{
       const newToken = generate({
         _id:payload._id,
         username:payload.username
-      },'6000s')
+      },'60000s')
       res.header('Authorization',newToken)
       next()
     }else {
@@ -58,6 +59,7 @@ app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use(UserRouter)
 app.use(CateRouter)
+app.use(ArticleRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
