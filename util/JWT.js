@@ -5,7 +5,11 @@ const JWT = {
        return jsonwebtoken.sign(value,secret,{expiresIn: expires})
     },
     verify(token){
-       return jsonwebtoken.verify(token,secret)
+        try{
+            return jsonwebtoken.verify(token,secret)
+        }catch (e){
+            return false
+        }
     }
 }
 
