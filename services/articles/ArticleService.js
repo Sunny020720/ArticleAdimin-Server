@@ -50,9 +50,9 @@ const ArticleService = {
     //         cate_name,cate_alias
     //     })
     // },
-    // del:async({_id})=>{
-    //     return CateModel.deleteOne({_id})
-    // }
+    del:async({_id})=>{
+        return ArticleModel.deleteOne({_id})
+    }
 }
 
 module.exports = ArticleService
