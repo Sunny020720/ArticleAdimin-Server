@@ -40,9 +40,10 @@ const ArticleService = {
             return ArticleModel.find({}).skip((pagenum-1)*pagesize).limit(pagesize)
         }
     },
-    // add:async({cate_name,cate_alias})=>{
-    //     return CateModel.create({cate_name, cate_alias})
-    // },
+    // 添加文章
+    add:async({title,state, cate_id,cover_img,content})=>{
+        return ArticleModel.create({title,state,cate_id,cover_img,content})
+    },
     // info:async({cate_name,cate_alias,_id})=>{
     //     return CateModel.updateOne({
     //         _id
